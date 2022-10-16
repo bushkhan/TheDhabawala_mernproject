@@ -5,6 +5,9 @@ const app = express();
 
 import routes from './routes/index.js'
 import mongoose from "mongoose";
+import errorHandler from './middlewares/errorHandler';
+
+
 const DB_URL = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.47apsm5.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -17,11 +20,13 @@ db.once('open',()=>{
 
 global.appRoot = path.resolve(__dirname);
 app.use(express.urlencoded({ extended: false}));
-
-
+app.use(express.json());
 app.use('/api',routes);
 
 app.use('/menuImages',express.static('menuImages'));
+
+
+app.use(errorHandler);
 
 app.listen(APP_PORT,()=>{
     console.log(`Listening on port ${APP_PORT}`);
