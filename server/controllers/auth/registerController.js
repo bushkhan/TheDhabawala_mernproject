@@ -2,6 +2,7 @@ import Joi from 'joi';
 import CustomErrorHandler from '../../services/CustomeErrorHandler';
 import { User } from '../../models';
 import bcrypt from 'bcrypt';
+import JwtService from '../../services/JwtService';
 
 
 const registerController = {
@@ -14,7 +15,6 @@ const registerController = {
             repeat_password: Joi.ref('password') 
 
         });
-        console.log(req.body);
         const { error } = registerSchema.validate(req.body);
 
         if(error){
@@ -33,32 +33,35 @@ const registerController = {
             return next(error);
         }
         
+        const { name,email, password} = req.body;
 
         //hash password
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
 
 
         //prepare the model
-        const { name,email, password} = req.body;
-        const user = {
+        const user = new User({
             name: name,
             email: email,
             password: hashedPassword
-        }
+        });
 
         //now save in database cause user is created 
-
+        let access_token;
         try {
-            const result = await User.save();
+            const result = await user.save();
 
             //token
             //now passing the the token to the user by creating it
+            access_token = JwtService.sign(
+                {_id: result._id, role: result.role}
+            )
 
         } catch (error) {
             return next(error);
         }
 
-        res.json({ msg: "Hello Bushra" });
+        res.json({ access_token: access_token});
     }
 }
 
