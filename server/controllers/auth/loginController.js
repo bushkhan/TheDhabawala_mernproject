@@ -1,8 +1,9 @@
 import Joi from 'joi';
 import CustomErrorHandler from '../../services/CustomeErrorHandler';
-import { User } from '../../models';
+import { User, RefreshToken } from '../../models';
 import bcrypt from 'bcrypt';
 import JwtService from '../../services/JwtService';
+import { REFRESH_SECRET } from '../../config/index.js'
 
 const loginController = {
     async login(req,res,next){
@@ -37,14 +38,40 @@ const loginController = {
             const access_token = JwtService.sign(
                 {_id: user._id, role: user.role}
             )
+            const refresh_token = JwtService.sign({_id: user._id, role: user.role}, '1y', REFRESH_SECRET);
+            //now adding the refresh token in db
+            await RefreshToken.create({ token: refresh_token});
 
-            res.json({ access_token: access_token});
+            res.json({ access_token: access_token, refresh_token: refresh_token});
 
 
         } catch (error) {
             return next(error);
         }
+    },
+    async logout(req, res, next) {
+        //validate data before deleting it
+        const refreshSchema = Joi.object({
+            refresh_token: Joi.string().required(),
+        });
+
+        const { error } = refreshSchema.validate(req.body);
+
+        if(error){
+            return next(error);
+        }
+
+        try {
+            await RefreshToken.deleteOne({ token: req.body.refresh_token});
+        } catch (error) {
+            return next(new Error("Something went wrong in database!"));
+        }
+
+        res.json({ status: 1});
     }
 };
+
+
+
 
 export default loginController;
