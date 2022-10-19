@@ -48,14 +48,20 @@ const dhabaController = {
             if (err) {
                 return next(CustomErrorHandler.serverError(err.message));
             }
-            const filePath = req.files.menuImage[0].path;
+            const filePath1 = req.files.menuImage[0].path;
+            const filePath2 = req.files.dhabImage[0].path;
  
 
 
             const { error } = dhabaSchema.validate(req.body);
             if (error) {
                 //delete the uploaded file asap
-                fs.unlink(`../uploads/menuImages/${filePath}`, (err) => {
+                fs.unlink(`../uploads/menuImages/${filePath1}`, (err) => {
+                    if (err) {
+                        return next(CustomErrorHandler.serverError(err.message));
+                    }
+                });
+                fs.unlink(`../uploads/dhabaImages/${filePath2}`, (err) => {
                     if (err) {
                         return next(CustomErrorHandler.serverError(err.message));
                     }
@@ -150,8 +156,15 @@ const dhabaController = {
         if(!document){
             return next(new Error('Nothing to delete!'));
         }
-        const imagePath = document.menuImage;
-        fs.unlink(`${appRoot}/${imagePath}`,(err)=>{
+        const menuImagePath = document.menuImage;
+        const newMenuImagePath = menuImagePath.toString().replace('http://localhost:2500/','');
+        fs.unlink(`${appRoot}/${newMenuImagePath}`,(err)=>{
+            return next(CustomErrorHandler.serverError());
+        });
+
+        const dhabaImagePath = document.dhabaImage;
+        const newDhabaImagePath = dhabaImagePath.toString().replace('http://localhost:2500/','');
+        fs.unlink(`${appRoot}/${newDhabaImagePath}`,(err)=>{
             return next(CustomErrorHandler.serverError());
         })
         res.json(document);
