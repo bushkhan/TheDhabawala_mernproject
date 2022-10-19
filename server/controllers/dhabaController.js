@@ -145,6 +145,18 @@ const dhabaController = {
         });
     },
 
+    async destroy(req, res, next){
+        const document = await Dhaba.findOneAndRemove({ _id: req.params.id});
+        if(!document){
+            return next(new Error('Nothing to delete!'));
+        }
+        const imagePath = document.menuImage;
+        fs.unlink(`${appRoot}/${imagePath}`,(err)=>{
+            return next(CustomErrorHandler.serverError());
+        })
+        res.json(document);
+    },
+
     async index(req, res, next) {
         let documents;
         try {
