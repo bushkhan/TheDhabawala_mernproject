@@ -6,24 +6,40 @@ import fs from 'fs';
 import CustomErrorHandler from '../services/CustomeErrorHandler';
 
 const storage = multer.diskStorage({
-    destination: (req,file,cb) => cb(null,'menuImages'),
-    filename: (req, file, cb) => {
+    destination: (req, file, cb) => {
+        if (file.fieldname === "menuImage") {
+            cb(null, './uploads/menuImages')
+        }
+        else if (file.fieldname === "dhabaImage") {
+            cb(null, './uploads/dhabaImages');
+        }
 
-        const uniqueName = `${Date.now()}-${Math.round(
-            Math.random() * 1e9
-        )}${path.extname(file.originalname)}`;
-        // 3746674586-836534453.png
+     },
+     filename:(req,file,cb)=>{
+         if (file.fieldname === "menuImage") {
+             cb(null, file.fieldname+Date.now()+path.extname(file.originalname));
+         }
+       else if (file.fieldname === "dhabaImage") {
+         cb(null, file.fieldname+Date.now()+path.extname(file.originalname));
+       }
 
-        cb(null, uniqueName);
-    },
-})
-
+     }
+});
 //craeting a multer function now
 //and passing all the values in that
 const handleMultipartData = multer({
     storage,
     limits: { fileSize: 1000000 * 5 },
-}).single('menuImage'); //5mb max
+}).fields(
+    [
+        {
+            name:'menuImage',maxCount:2
+        },
+        {
+            name: 'dhabaImage', maxCount:2
+        },
+    ]
+);//5mb max
 
 
 const dhabaController = {
@@ -33,8 +49,9 @@ const dhabaController = {
             if (err) {
                 return next(CustomErrorHandler.serverError(err.message));
             }
-            const filePath = req.file.path.replace("\\","/");
-
+            const filePath = req.files.menuImage[0].path.replace("\\","/");
+            console.log(req.files.menuImage[0]);
+            console.log(req.files.dhabaImage[0]);
             const dhabaSchema = Joi.object(
                 {
                     name: Joi.string().required(),
@@ -52,7 +69,7 @@ const dhabaController = {
             const { error } = dhabaSchema.validate(req.body);
             if(error){
                 //delete the uploaded file asap
-                fs.unlink(`${appRoot}/${filePath}`,(err)=>{
+                fs.unlink(`../uploads/menuImages/${filePath}`,(err)=>{
                     if (err) {
                         return next(CustomErrorHandler.serverError(err.message));
                     }
@@ -75,7 +92,8 @@ const dhabaController = {
                     location,
                     address,
                     overview,
-                    menuImage: filePath
+                    menuImage: req.files.menuImage[0].path,
+                    dhabaImage: req.files.dhabaImage[0].path
                 })
             } catch (error) {
                 return next(error);

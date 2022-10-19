@@ -50,6 +50,13 @@ const dhabaSchema = new Schema({
             return `${APP_URL}/${menuImage}`;
         }
     },
+    dhabaImage: {
+        type: String,
+        required: true,
+        get:(dhabaImage) =>{
+            return `${APP_URL}/${dhabaImage}`;
+        }
+    },
 
 }, { timestamps: true, toJSON: { getters: true}, id: false});
 
