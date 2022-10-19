@@ -27,4 +27,6 @@ router.get('/dhabas', dhabaController.index);
 
 router.get('/dhabas/:id', dhabaController.show);
 
+router.delete('/dhabas/:id',[auth, admin], dhabaController.destroy);
+
 export default router;
