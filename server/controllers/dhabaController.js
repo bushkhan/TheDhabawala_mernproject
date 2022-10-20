@@ -28,7 +28,7 @@ const storage = multer.diskStorage({
 //and passing all the values in that
 const handleMultipartData = multer({
     storage,
-    limits: { fileSize: 1000000 * 5 },
+    limits: { fileSize: 1000000 * 10 },
 }).fields(
     [
         {
@@ -49,19 +49,13 @@ const dhabaController = {
                 return next(CustomErrorHandler.serverError(err.message));
             }
             const filePath1 = req.files.menuImage[0].path;
-            const filePath2 = req.files.dhabImage[0].path;
  
 
 
             const { error } = dhabaSchema.validate(req.body);
             if (error) {
                 //delete the uploaded file asap
-                fs.unlink(`../uploads/menuImages/${filePath1}`, (err) => {
-                    if (err) {
-                        return next(CustomErrorHandler.serverError(err.message));
-                    }
-                });
-                fs.unlink(`../uploads/dhabaImages/${filePath2}`, (err) => {
+                fs.unlink(`${appRoot}/${filePath1}`, (err) => {
                     if (err) {
                         return next(CustomErrorHandler.serverError(err.message));
                     }
@@ -108,7 +102,6 @@ const dhabaController = {
                 filePath = req.files.menuImage[0].path.split("//").join("/");
             }
            
-            console.log(req.files.menuImage);
 
 
 
@@ -116,7 +109,7 @@ const dhabaController = {
             if (error) {
                 //delete the uploaded file asap
                 if (req.file) {
-                    fs.unlink(`../uploads/menuImages/${filePath}`, (err) => {
+                    fs.unlink(`${appRoot}/${filePath}`, (err) => {
                         if (err) {
                             return next(CustomErrorHandler.serverError(err.message));
                         }
@@ -142,7 +135,6 @@ const dhabaController = {
                     overview,
                     ...(req.file && { menuImage: req.files.menuImage[0].path, dhabaImage: req.files.dhabaImage[0].path }),
                 }, { new: true});
-
             } catch (error) {
                 return next(error);
             }
@@ -156,14 +148,14 @@ const dhabaController = {
         if(!document){
             return next(new Error('Nothing to delete!'));
         }
-        const menuImagePath = document.menuImage;
-        const newMenuImagePath = menuImagePath.toString().replace('http://localhost:2500/','');
+        const menuImagePath = document._doc.menuImage;
+        const newMenuImagePath = menuImagePath.toString().replace('http://localhost:3500/','');
         fs.unlink(`${appRoot}/${newMenuImagePath}`,(err)=>{
             return next(CustomErrorHandler.serverError());
         });
 
-        const dhabaImagePath = document.dhabaImage;
-        const newDhabaImagePath = dhabaImagePath.toString().replace('http://localhost:2500/','');
+        const dhabaImagePath = document._doc.dhabaImage;
+        const newDhabaImagePath = dhabaImagePath.toString().replace('http://localhost:3500/','');
         fs.unlink(`${appRoot}/${newDhabaImagePath}`,(err)=>{
             return next(CustomErrorHandler.serverError());
         })
@@ -174,7 +166,6 @@ const dhabaController = {
         let documents;
         try {
             documents = await Dhaba.find().select('-updatedAt -__v').sort({ _id: -1 });
-
         } catch (error) {
             return next(CustomErrorHandler.serverError());
         }
