@@ -36,7 +36,7 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-
+   
   &.active {
     color: #ff5200;
   }
@@ -65,7 +65,7 @@ export const NavMenu = styled.div`
   width: 100vw;
   justify-content: center;
   white-space: nowrap;
-
+  margin-top:90px;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -75,7 +75,7 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   margin-right: -220px;
-
+  margin-top:90px;
   justify-content: flex-end;
   width: 100vw;
 

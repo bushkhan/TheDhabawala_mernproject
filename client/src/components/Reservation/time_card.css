@@ -1,0 +1,53 @@
+.card__1{
+    background: #FEE2B3;
+    overflow: hidden;
+    color: #fff;
+    max-width: 80px;
+    height: 80px;
+    border-radius: 60px;
+    justify-items: auto;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  
+  .time {
+    font-family: "Nunito";
+    font-size: 7px;
+    margin-top: 22px;
+    margin-left: 8px;
+    font-weight: lighter;
+    color: #000;
+  }
+  
+  .coupon {
+    color: #000;
+    font-family: "Nunito";
+    font-size: 7px;
+    margin-top:5px;
+    margin-left: 15px;
+  }
+  
+  .slick-prev{
+    margin-top: -15px;
+  }
+  
+  .slick-next{
+    margin-top: -15px;
+  }
+  
+  
+  .slick-prev:before{
+    content: "<";
+    color: black;
+    font-size: 25px;
+    margin-left: 30px;
+   
+  }
+  
+  .slick-next::before{
+    content: ">";
+    color: black;
+    font-size: 25px;
+    margin-left: -50px;
+    
+  }

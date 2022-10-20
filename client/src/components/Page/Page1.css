@@ -1,0 +1,431 @@
+/* //Famous Dhaba's start */
+.sliderName {
+    height: 90vh;
+  
+    background-color: #fee2b3;
+  }
+  
+  h3.select {
+    padding: 70px 15px 0px 70px;
+    font-weight: 400;
+  }
+  
+  h1 {
+    padding: 10px 0px 10px 70px;
+    font-weight: 750;
+  }
+  
+  span {
+    color: #ff5200;
+  }
+  
+  h3.selectName {
+    margin-top: -370px;
+    margin-left: 800px;
+    font-size: 20px;
+  }
+  
+  h4.half {
+    display: flex;
+    margin-top: -20px;
+    margin-left: 1250px;
+  }
+  
+  .sliderLocation {
+    display: flex;
+  }
+  
+  .location {
+    display: block;
+    /* height: 200px;
+      width: 100px; */
+    padding: 10px;
+    margin-left: 70px;
+    line-height: 80px;
+    margin-top: -10px;
+  }
+  /* .loc_name{
+      display: block;
+      justify-content:left;
+      font-size: 20px;
+      font-family: 'Nunito';
+      font-weight: 400;
+      padding: 10px;
+      margin-left: 20px;
+      line-height: 68px;
+  }  */
+  
+  .loc_button {
+    display: block;
+    justify-content: left;
+    font-size: 20px;
+    font-family: "Nunito";
+    font-weight: 400;
+    padding: 10px;
+    margin-left: 20px;
+    /* line-height: 68px; */
+    margin-top: 27px;
+    border-radius: 5px;
+  }
+  
+  .loaction_Img {
+    margin-top: -90px;
+  }
+  
+  .loc_img {
+    border-radius: 10px;
+    height: 180px;
+    width: 320px;
+    margin-left: 240px;
+    margin-top: 50px;
+  }
+  
+  .select_location {
+    display: flex;
+    margin-top: -5px;
+    justify-content: space-evenly;
+    margin-left: -550px;
+  }
+  
+  .Dhaba_Names {
+    display: flex;
+    margin-left: 470px;
+    margin-top: -90px;
+  }
+  
+  .dhaba_rating {
+    margin-left: 70px;
+  }
+  
+  h4.half {
+    color: black;
+    margin-top: -360px;
+    margin-left: 290px;
+  }
+  .dhaba_Name {
+    color: black;
+    margin-top: -80px;
+    margin-left: 500px;
+    display: flex;
+  }
+  
+  .Grid {
+    margin-top: -425px;
+    margin-left: 1740px;
+  }
+  /*
+  .Dhaba_name{
+      color: white;
+      margin-top: 5px;
+      margin-left: 500px;
+      display: block;
+  } */
+  
+  /* //Famous Dhaba's end */
+  
+  /* //Popular Cuisine Start// */
+  .Image {
+    /* filter: blur(70%); */
+    text-decoration: none;
+    height: 90vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 60px;
+    /* background-image: linear-gradient(#FFA384, #74BDCB); */
+    opacity: 0.3;
+    background-color: #ffa384;
+  }
+  
+  /* .Image::before{
+      opacity: .1;
+      background-color:#FFA384; 
+      height: 90vh;
+      width:100%;
+  } */
+  
+  .popularCuisine {
+    display: flex;
+    margin-top: -700px;
+    margin-left: 80px;
+  }
+  
+  .cuisine_no {
+    margin-top: 30px;
+    margin-left: 450px;
+  }
+  
+  h1.selectCuisine {
+    margin-left: 270px;
+  }
+  
+  .loaction_Img {
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+  
+  .food_img {
+    border-radius: 10px;
+    height: 180px;
+    width: 320px;
+    margin-left: 200px;
+    margin-top: 40px;
+  }
+  
+  .cuisine_Name {
+    display: flex;
+    margin-top: -460px;
+    margin-left: -1120px;
+  }
+  .cuisine_name {
+    display: block;
+    /* margin-top: -990px; */
+    justify-content: left;
+    font-size: 20px;
+    font-family: "Nunito";
+    font-weight: 400;
+    /* padding: 10px; */
+    /* padding-top: -600px; */
+    padding-left: 2250px;
+  
+    line-height: 68px;
+  }
+  
+  .cuisine_icon {
+    display: block;
+    /* height: 200px;
+      width: 100px; */
+    margin-top: -8px;
+    padding: 10px;
+    margin-left: 10px;
+    line-height: 70px;
+  }
+  
+  /* .dhaba_cuisine{
+  
+  } */
+  
+  /* //Popular Cuisine end// */
+  
+  /* Trending Dhaba Start*/
+  
+  .trending {
+    margin-top: 140px;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: #fee2b3;
+  }
+  .trending_dhaba1 {
+    margin-top: 110px;
+    margin-bottom: 25px;
+    margin-left: -50px;
+  }
+  
+  .trending_dhaba1::after {
+    content: "";
+    height: 3px;
+    width: 18%;
+    background-color: #ff5200;
+    position: absolute;
+    left: 2.5%;
+    bottom: 0%;
+    top: 292%;
+  }
+  
+  /* Trending Dhaba End*/
+  
+  /* Own a dhaba start */
+  .image {
+    /* filter: blur(100%);
+      opacity: 2; */
+    margin-top: 0px;
+    height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  
+    /* background:linear-gradient(#242424); */
+  }
+  
+  /* .image{
+      opacity: 0.3;
+      background-color: #ffa384;
+      width: 50%;
+  } */
+  
+  .own_dhaba {
+    margin-top: -520px;
+    color: #fff;
+    margin-left: 100px;
+    font-weight: 400;
+    font-size: 24px;
+    font-family: "Nunito";
+    position: relative;
+    letter-spacing: 2%;
+  }
+  
+  .own_dhaba::after {
+    content: "";
+    height: 2px;
+    width: 15%;
+    background-color: #ff5200;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    top: 120%;
+  }
+  .para {
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 30%;
+    color: #fff;
+    font-size: 25px;
+    font-family: "Nunito";
+  }
+  
+  .btn {
+    margin-top: 40px;
+    margin-left: 6.5%;
+    background-color: transparent;
+    border: 2px solid #ff5200;
+    border-radius: 7px;
+    height: 45px;
+    width: 8%;
+    color: #ff5200;
+    font-family: "Nunito";
+    font-size: 20px;
+  }
+  /* Own a dhaba end */
+  
+  /* Our app launching start */
+  .app {
+    display: flex;
+    height: 110vh;
+    background-color: #fee2b3;
+  }
+  
+  .launching {
+    margin-top: 380px;
+    margin-left: 300px;
+    font-weight: 600;
+    font-size: 27px;
+    font-family: "Nunito";
+    position: relative;
+    letter-spacing: 2%;
+  }
+  
+  .launching::after {
+    content: "";
+    height: 3px;
+    width: 60%;
+    background-color: #ff5200;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    top: 120%;
+  }
+  
+  .para1 {
+    margin-left: 300px;
+    margin-top: 40px;
+    width: 60%;
+    color: #000;
+    font-weight: 200;
+    font-size: 25px;
+    font-family: "Nunito";
+  }
+  
+  .phone {
+    margin-top: 300px;
+    height: 470px;
+    width: 700px;
+  }
+  
+  /* Our app launching end */
+  
+  /* Footer Section Start */
+  
+  .Footer {
+    display: flex;
+    height: 58vh;
+    padding: 90px 15%;
+    justify-content: space-around;
+    background-color: #ff7a42;
+    color: #000;
+    font-family: "Nunito";
+  }
+  
+  .Footer div {
+    text-align: center;
+  }
+  
+  .Logo1 {
+    margin-top: -90px;
+    flex-grow: 2;
+    margin-left: -30px;
+  }
+  
+  .dhabawala1 h3 {
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+  
+  .dhaba_text1::after {
+    content: "";
+    height: 3px;
+    width: 13%;
+    background-color: #ff5200;
+    position: absolute;
+    left: 24%;
+    bottom: 0%;
+    top: 525%;
+  }
+  
+  .dhaba_A{
+    display:block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    /* margin-bottom: 30px; */
+    font-size: 20px;
+  }
+
+ 
+  
+  .support h3 {
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+  
+  .support_text::after {
+    content: "";
+    height: 3px;
+    width: 9%;
+    background-color: #ff5200;
+    position: absolute;
+    left: 77.5%;
+    bottom: 0%;
+    top: 522%;
+  }
+  
+  .support a {
+    display: inline-block;
+    /* display: block; */
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+  
+  .facebook_icon {
+    margin-right: 10px;
+  }
+  
+  .copy_right h5 {
+    margin-top: -30px;
+    margin-left: 660px;
+  }
+  /* Footer Section Ends */

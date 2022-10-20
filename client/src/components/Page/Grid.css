@@ -1,0 +1,49 @@
+.grid {
+  width: 700px;
+  margin-top: 50px;
+  margin-left: -1100px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 20px 50px;
+}
+.grid > article img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.text {
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h5 {
+  font-family: "Nunito";
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.Rating {
+  margin-top: 7px;
+}
+
+@media screen and (max-width: 480px) {
+  .grid img {
+    width: 200px;
+    height: 100px;
+    grid-gap: 0px 0px;
+    padding: -20px;
+  }
+
+  .grid {
+    margin-top: 100px;
+    margin-left: -500px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    display: block;
+  }
+}
+a{
+  text-decoration: none;
+  color: black;
+}

@@ -9,6 +9,7 @@ import {
   NavLogo
 } from './NavbarElements';
 import logo from '../../Images/logo.png';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (

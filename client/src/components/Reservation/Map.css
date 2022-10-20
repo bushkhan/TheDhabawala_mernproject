@@ -1,0 +1,40 @@
+.map_container{
+    background-color: #fff;
+    height: 600px;
+    width: 630px;
+    margin-left: -25px;
+    margin-top: -5px;
+    margin-bottom: 50px;
+  }
+  
+  .dhaba_details{
+    display: flex;
+    margin-top: 10px;
+   
+  }
+  
+  .dhaba_address{
+    margin-left:70px ;
+  }
+  
+  .atmosphere{
+    margin-left:170px ;
+  }
+  
+  .dhaba_detail{
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .dhaba_Facility{
+    margin-top: -30px;
+    margin-left:70px ;
+  }
+  
+  .language{
+    margin-left:170px ;
+  }
+  
+  .dhaba_address{
+    margin-top: 10px;
+  }

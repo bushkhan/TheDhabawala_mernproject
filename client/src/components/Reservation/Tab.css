@@ -1,0 +1,307 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: #fff;
+  padding: 0px 25px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 630px;
+  height: 630px;
+  margin-top: 20px;
+  /* margin-left: 45px; */
+  margin-left: 75px;
+  word-break: break-all;
+}
+
+.bloc-tabs {
+  background-color: #fff;
+  display: flex;
+}
+.tabs {
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+
+.active-tabs {
+  background: white;
+  border-bottom: 1px solid transparent;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 35px;
+  left: 0%;
+  width: calc(100% + 0.5px);
+  height: 3px;
+  background: #ff5200;
+}
+
+button {
+  border: none;
+}
+.content-tabs {
+  background: #fff;
+  flex-grow: 1;
+  width: 600px;
+}
+.content {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.content h2 {
+  padding: 0px 0 5px 0px;
+}
+
+.content p {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.active-content {
+  display: block;
+}
+
+.dropdown {
+  width: 90px;
+  height: 25px;
+  color: #ff5200;
+}
+
+.drop {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.drop {
+  background-color: #fff;
+}
+
+.recommended {
+  font-family: "Nunito";
+  font-weight: lighter;
+  font-size: 17px;
+}
+
+.menu2{
+  /* height: 350px;
+  width: 200px; */
+  margin-left: 140px;
+  height: 300px;
+}
+
+/* .menu_before_after {
+  display: flex;
+  margin-top: 10px;
+  font-family: "Nunito";
+  font-size: 16.5px;
+} */
+
+/* .menu {
+  margin-left: 10px;
+}
+
+.before {
+  margin-left: 220px;
+}
+
+.after {
+  margin-left: 100px;
+}
+
+.menu_item {
+  display: flex;
+  font-family: "Nunito";
+  font-size: 18px;
+  color: black;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-weight: 100;
+} */
+
+/* .before_no1 {
+  background-color: #f0ebeb;
+  height: 20px;
+  padding: 1px;
+  padding-left: 6px;
+  width: 70px;
+  margin-left: 190px;
+  border-radius: 3px;
+}
+
+.before_no1::after {
+  content: "";
+  height: 2px;
+  width: 11.5%;
+  background-color: #ff5200;
+  position: absolute;
+  left: 55.5%;
+  bottom: 0%;
+  top: 21%;
+}
+
+.before_no2 {
+  background-color: #f0ebeb;
+  height: 20px;
+  padding: 1px;
+  padding-left: 6px;
+  width: 70px;
+  margin-left: 210px;
+  border-radius: 3px;
+}
+
+.before_no2::after {
+  content: "";
+  height: 2px;
+  width: 11%;
+  background-color: #ff5200;
+  position: absolute;
+  left: 55.5%;
+  bottom: 0%;
+  top: 26.5%;
+}
+
+.before_no3 {
+  background-color: #f0ebeb;
+  height: 20px;
+  padding: 1px;
+  padding-left: 6px;
+  width: 70px;
+  margin-left: 190px;
+  border-radius: 3px;
+}
+
+.before_no3::after {
+  content: "";
+  height: 2px;
+  width: 11%;
+  background-color: #ff5200;
+  position: absolute;
+  left: 55.5%;
+  bottom: 0%;
+  top: 31.5%;
+}
+
+.before_no4 {
+  background-color: #f0ebeb;
+  height: 20px;
+  padding: 1px;
+  padding-left: 6px;
+  width: 70px;
+  margin-left: 210px;
+  border-radius: 3px;
+}
+
+.before_no4::after {
+  content: "";
+  height: 2px;
+  width: 11%;
+  background-color: #ff5200;
+  position: absolute;
+  left: 55.5%;
+  bottom: 0%;
+  top: 37%;
+}
+
+.before_no5 {
+  background-color: #f0ebeb;
+  height: 20px;
+  padding: 1px;
+  padding-left: 6px;
+  width: 70px;
+  margin-left: 205px;
+  border-radius: 3px;
+}
+.before_no5::after {
+  content: "";
+  height: 2px;
+  width: 11%;
+  background-color: #ff5200;
+  position: absolute;
+  left: 55.5%;
+  bottom: 0%;
+  top: 42%;
+}
+
+.after_no1 {
+  background-color: #f0ebeb;
+  height: 20px;
+  padding: 1px;
+  padding-left: 6px;
+  width: 70px;
+  margin-left: 60.5px;
+  border-radius: 3px;
+} */
+
+hr {
+  margin-top: 10px;
+  margin-left: -45px;
+  width: 113%;
+}
+
+.famous_dishes {
+  margin-top: 20px;
+  font-family: "Nunito";
+}
+
+.dish_name {
+  margin-top: 10px;
+  font-family: "Nunito";
+}
+
+.famous_dishes h5 {
+  font-size: 20px;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.famous_dishes h6 {
+  font-weight: 100;
+  font-size: 17px;
+}
+
+.timing {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 130px;
+  margin-top: 10px;
+  font-family: "Nunito";
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.day {
+  display: flex;
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: "Nunito";
+  font-weight: 100;
+  justify-content: space-between;
+}
+
+.time_container {
+  background-color: #f0ebeb;
+  width: 23rem;
+  height: 30px;
+  padding-left: 90px;
+  padding-top: 8px;
+}

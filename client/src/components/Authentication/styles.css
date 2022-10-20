@@ -1,0 +1,249 @@
+.register-form{
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      max-width: 400px;
+      width:100%;
+      margin: auto;
+     border-radius: 35px;
+     margin-right:10%;
+     margin-bottom: 32%;
+    }
+    
+    .register-form > form {
+      width: 100%;
+      font-size: larger;
+      justify-content: center;
+      float: right;
+      height: 65vh;
+      border: 1px solid #dfdfdf;
+      padding: 35px;
+      border-radius: 35px;
+      background: #fff;
+      margin-bottom: 60px;
+    }
+    .ui form{
+      padding-left: 10px 5px 10px 10px;
+      border-radius: 10px;
+    }
+    pre {
+      width: 70%;
+      color: #fff;
+      font-size: larger;
+    
+    }
+    .register {
+      background: rgb(27, 26, 26) !important;
+      color: white;
+      float: left;
+      font-size: larger;
+      height: 40px;
+      margin-top: 15px;
+      width: 40%;
+      border-radius: 10px;
+    }
+
+    a{
+      color: grey;
+      padding-left: 10px;
+      float: right;
+      margin-bottom: 80px;
+      margin-left: 10px;
+    
+    }
+    .name{
+      padding: 10px 15px;
+    }
+    
+    input[type=text] {
+      width: 100%;
+      font-size: larger;
+      padding: 5px 15px;
+      margin: 0px 0px 8px 0px;
+      box-sizing: border-box;
+      
+    }
+    input[type=email] {
+      width: 100%;
+      font-size: larger;
+      padding: 5px 20px;
+      margin:  5px 0;
+      box-sizing: border-box;
+    }
+    input[type=password]{
+      width: 100%;
+      font-size: larger;
+      padding: 5px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    input[type=password]:focus {
+      border: 3px solid #555;
+    }
+    .email{
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        padding: 14px 0 0 25px;
+    }
+    .submit-button{
+      background-color: black;
+      color: white;
+      height: 50px;
+      width: 100px;
+      border-radius: 10px;
+      font-size: 20px;
+      margin-bottom: 20px;
+   
+      border-radius: 8px;
+      padding: 10px 10px;
+    }
+    
+    .forget-submit{
+      background-color: black;
+      color: white;
+      height: 50px;
+      width: 130px;
+      margin-top: 10px;
+      border-radius: 10px;
+      font-size: 20px;
+      
+    }
+    
+     label{
+      color: red;
+      padding: auto;
+    
+     }
+     #relative #middle{
+      position: absolute;
+      top: 500px; left: 220px;
+    }
+    #middle {
+      background-color: black;
+      color: white;
+      width: 120px;
+      height: 50px;
+      font-size: 20px;
+      border-radius: 8px;
+      padding: 5px 20px;
+    }
+    @media (max-width:868px) {
+     #relative #middle{
+      position: absolute;
+      top: 650px; left: 150px;
+      }
+    }
+    #signInDiv{
+     /* display:initial;
+      border-radius: 50px; */ 
+    display: right;
+     padding-left: 50px;
+     margin-bottom: 80px;
+    }
+    #button{
+      display:flex;
+      margin-top: 50px;
+      width: 130px;
+      height: 50px;
+    }
+    
+    
+    @media (min-width:768px) {
+      .form-login{
+        background-image: url(/src/Images/dhaba1.png);
+        background-size:100% 100%;
+        background-repeat: no-repeat;
+        position: sticky;
+      }
+    }
+    @media (min-width:768) {
+     
+    }
+    .forget-form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      max-width: 400px;
+      width:100%;
+      margin: auto;
+     border-radius: 35px;
+     margin-right:10%;
+     margin-bottom: 32%;
+    }
+    .forget-form >form{
+      width: 100%;
+      font-size: larger;
+      justify-content: center;
+      float: right;
+      height: 55vh;
+      border: 1px solid #dfdfdf;
+      padding: 25px;
+      border-radius: 35px;
+      background: #fff;
+      margin-bottom: 50px;
+    }
+    .forget-password{
+      transition: all 3s;
+    }
+    .login-form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      max-width: 400px;
+      width:100%;
+      margin: auto;
+     border-radius: 35px;
+     margin-right:10%;
+     margin-bottom: 32%;
+    }
+    .login-form > form{
+      width: 100%;
+    margin-right: 20%;
+    font-size: 20px;
+    justify-content: center;
+    float: right;
+    height: 50vh;
+    border: 1px solid #dfdfdf;
+    padding: 30px;
+    border-radius: 35px;
+    background: #fff;
+    margin-bottom: 50px;
+    }
+     .login-submit{
+      width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    
+    }
+
+   #logged-button{
+      /* float: right ; */
+      position: absolute;
+      left: 1170px; top: 405px;
+      margin-left: 20px;
+      /* margin-bottom: 5540px; */
+      }
+    @media (min-width) {
+      #logged-button{
+        position: absolute;
+        top: 500px; left: 220px;
+      }
+    }
+.login-button{
+  display: inline-flex;
+}
+.ui-form{
+  padding: 10px ;
+}
