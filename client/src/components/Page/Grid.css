@@ -10,21 +10,23 @@
 .grid > article img {
   max-width: 100%;
   border-radius: 10px;
+  margin-bottom: -60px;
 }
 .text {
-  padding: 0 20px 20px;
+  padding: 0px 20px;
   display: flex;
+  margin-top: -5px;
   justify-content: space-between;
 }
 
 h5 {
   font-family: "Nunito";
   font-size: 16px;
-  margin-top: 3px;
+  margin-top: -3px;
 }
 
 .Rating {
-  margin-top: 7px;
+  margin-top: -5px;
 }
 
 @media screen and (max-width: 480px) {

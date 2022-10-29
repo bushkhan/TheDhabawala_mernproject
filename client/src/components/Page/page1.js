@@ -49,9 +49,7 @@ const page1 = () => {
             <h3>Kharghar</h3>
             <h3>Kharghar</h3> */}
           </div>
-        </div>
-    
-       
+        </div>   
         <div className="Grid">
         <Grid />
         </div>
@@ -142,17 +140,17 @@ const page1 = () => {
       </div>
 
       <div className="Footer">
-        <div className="dhabawala1">
-          <h3 className="dhaba_text1">Dhabawala</h3>
-          <a className="dhaba_A" href="#">About us</a>
-          <a  className="dhaba_A" href="#">Dhabas</a>
-          <a  className="dhaba_A" href="#">Emerchant</a>
-          <a   className="dhaba_A" href="#">Blogs</a>
-          <a  className="dhaba_A"  href="#">Careers</a>
+        <div className="dhaba_Wala">
+          <h3 className="dhabatext">Dhabawala</h3>
+          <a href="#" className="DhabaText">About us</a><br/>
+          <a href="#" className="DhabaText">Dhabas</a><br/>
+          <a href="#" className="DhabaText">Emerchant</a><br/>
+          <a href="#" className="DhabaText">Blogs</a><br/>
+          {/* <a href="#" className="DhabaText">Careers</a> */}
         </div>
         <div className="Logo1">
-          <img src={logo} alt="logo" width="250" height="250" />
-          <div className="footer_icons">
+          <img src={logo} alt="logo1" width="250" height="250" />
+          <div className="footericons">
             {/* <i className="material-icons">Facebook</i>
             <i className="material-icons">Instagram</i> */}
             <FaFacebook className="facebook_icon" size='35' />
@@ -161,16 +159,16 @@ const page1 = () => {
         </div>
         <div className="support">
           <h3 className="support_text">Support</h3>
-          <a href="#">Contact Us</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Faq</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Fair Use Policy</a>
+          <a href="#">Contact Us</a><br/>
+          <a href="#">Privacy Policy</a><br/>
+          <a href="#">Faq</a><br/>
+          {/* <a href="#">Terms of Use</a><br/> */}
+          <a href="#">Fair Use Policy</a><br/>
         </div>
       </div>
       <div className="copy_right">
             <h5>Copyright @,all rights reserved.</h5>
-        </div> 
+        </div>
     </>
   );
 };

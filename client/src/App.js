@@ -5,7 +5,7 @@ import Hero from "./components/Hero/heroindex";
 import Login from "./components/Authentication/Login";
 import Page1 from "./components/Page/page1";
 import Register from "./components/Authentication/Register";
-
+import joinDhaba from "./components/joindhaba";
 import Reservation from "./components/Reservation/reservation"
  const App = () => {
   return (
@@ -15,6 +15,8 @@ import Reservation from "./components/Reservation/reservation"
         <Route path="/reservation/:id" element={<Reservation/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
+        {/* <Route path="/joindhaba" element={<joinDhaba/>}></Route> */}
+
       </Routes>
 
       
