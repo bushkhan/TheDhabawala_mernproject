@@ -2,7 +2,7 @@ import express from 'express';
 import auth from '../middlewares/auth';
 const router = express.Router();
 import admin from '../middlewares/admin';
-import { registerController,loginController, userController, refreshController } from '../controllers';
+import { registerController,loginController, userController, refreshController, reservationController } from '../controllers';
 import dhabaController from "../controllers/dhabaController.js";
 
 
@@ -28,5 +28,8 @@ router.get('/dhabas', dhabaController.index);
 router.get('/dhabas/:id', dhabaController.show);
 
 router.delete('/dhabas/:id',[auth, admin], dhabaController.destroy);
+
+router.post('/reservations/add', reservationController.add);
+
 
 export default router;
