@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import GoogleLogin from 'react-google-login';
 import { useState } from "react"
 import './styles.css';
-
+import axios from "axios";
 export default function Login(){
 
   const [loginData, setLoginData] = useState(
@@ -31,6 +31,8 @@ export default function Login(){
     setLoginData(data);
     localStorage.setItem('loginData', JSON.stringify(data));
   };
+
+
   const handleLogout = () => {
     localStorage.removeItem('loginData');
     setLoginData(null);
@@ -41,17 +43,45 @@ export default function Login(){
   const [Email,setEmail]=useState('')
   const [password,setpassword]=useState('')
   const [error,setError]=useState(false)
+  const [loginStatus, setLoginStatus] = useState(false);
 
   const handleSubmit=(e)=>{
       e.preventDefault();
-      if(Email.length==0||password.length==0){
+      if(Email.length === 0||password.length === 0){
           setError(true)
       }
       if(Email&&password)
       {
       console.log("\nEmail: ",Email,"\npassword: ",password)
       }
+
+          
+    const loginDetails = {
+      email:Email,
+      password:password,
+    
+    }
+    console.log(loginDetails);
+
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3500/api/login',
+      data: loginDetails
+  })
+  .then((res) => {
+
+    setLoginStatus("login success");
+    console.log(res);
+
+  }).catch(err => {
+
+    setLoginStatus(err.response.data.message);
+    console.log(err.response.data.message);
+  });
+
+
   }
+
   return (
     <div className="form-login">
     <section  id='relative'>
@@ -64,7 +94,7 @@ export default function Login(){
     </section>
     <>
     <div className='login-form'>
-<form onSubmit={handleSubmit}>
+<form>
 <h4>Login Now</h4>
       <div className='ui divider'></div>
       <div className='ui-form'>
@@ -91,7 +121,7 @@ export default function Login(){
                <label>please fill the password</label>:""}
            
           <div className="login-button">
-          <button className='login-submit' type='submit'>Login</button>
+          <button  onClick={handleSubmit} className='login-submit' type='submit'>Login</button>
           {/* </div> */}
               <div className='inline-block'>
               <div id="logged-button">
@@ -113,10 +143,14 @@ export default function Login(){
         </div>
             </div>
           </div>
-
-         </div>
-       
+         </div>       
       </div>
+           {/* display success message */}
+           {loginStatus ? (
+                <p className="text-success">{loginStatus}</p>
+            ) :  ( 
+                <p className="text-danger">{loginStatus}</p>
+            )}
     </form>
     </div>
     </>

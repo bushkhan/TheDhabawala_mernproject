@@ -7,6 +7,7 @@ import { Rating } from "@mui/material";
 import "./Tab.css";
 import Tab from "./Tab";
 import axios from 'axios';
+import { useParams, useNavigate } from "react-router-dom";
 
 import { useState, useEffect } from 'react';
 
@@ -18,10 +19,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ReservationCard from "./ReservationCard";
 import Dollar from "../CancleReservaion/dollar";
-import { useParams } from "react-router-dom";
+
 const Reservation = () => {
 
-
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [myData, setMyData] = useState([]);
@@ -76,16 +77,22 @@ const Reservation = () => {
       noOfPeople:selects
     }
     console.log(reservationDetails);
+
+    function submitForm(e){ 
+      navigate('/confirmReservation');
+    }
+
     axios({
       method: 'POST',
       url: 'http://localhost:3500/api/reservations/add',
       data: reservationDetails
   })
-  .then((res) => alert("Reservation Successful!"));
+  .then((res) => submitForm());
 
 
   
   }
+
 
 
 function userHandler(e) {

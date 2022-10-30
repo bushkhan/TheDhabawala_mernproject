@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../Authentication/styles.css";
-
+import axios from "axios";
 export default function Register() {
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token:" + response.credential);
@@ -55,6 +55,25 @@ export default function Register() {
     if (email && password) {
       console.log("\nname: ", name, "Email: ", email, "\npassword: ", password);
     }
+
+    
+    const registerDetails = {
+      name:name,
+      email:email,
+      password:password,
+      repeat_password:Confirmpassword
+    }
+    console.log(registerDetails);
+
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3500/api/register',
+      data: registerDetails
+  })
+  .then((res) => {
+    alert("register done");
+    console.log(res);
+  });
   };
 
   return (
@@ -74,7 +93,7 @@ export default function Register() {
         </section>
       </Link>
       <div className="register-form">
-        <form onSubmit={handleSubmit}>
+        <form>
           <h4>Register Now</h4>
           <div className="ui divider"></div>
           <div className="ui-form">
