@@ -1,9 +1,11 @@
-import Joi, { ref } from 'joi';
+import Joi from 'joi';
 import CustomErrorHandler from '../../services/CustomeErrorHandler';
 import { User,RefreshToken } from '../../models';
 import bcrypt from 'bcrypt';
 import JwtService from '../../services/JwtService';
-import { REFRESH_SECRET } from '../../config/index.js'
+import { REFRESH_SECRET } from '../../config/index.js';
+
+
 const registerController = {
    async register(req, res, next) {
 

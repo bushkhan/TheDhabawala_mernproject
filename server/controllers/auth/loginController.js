@@ -29,15 +29,13 @@ const loginController = {
             }
 
             //if user found in db then also compare the password
-            const match = await bcrypt.compare(req.body.password, user.password);
+            const match =  await bcrypt.compare(req.body.password, user.password);
             if(!match){
                 return next(CustomErrorHandler.wrongCredentials());
             }
 
             //if password also matches then generate the token
-            const access_token = JwtService.sign(
-                {_id: user._id, role: user.role}
-            )
+            const access_token = JwtService.sign({_id: user._id, role: user.role});
             const refresh_token = JwtService.sign({_id: user._id, role: user.role}, '1y', REFRESH_SECRET);
             //now adding the refresh token in db
             await RefreshToken.create({ token: refresh_token});
