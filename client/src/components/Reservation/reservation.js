@@ -8,7 +8,8 @@ import "./Tab.css";
 import Tab from "./Tab";
 import axios from 'axios';
 import { useParams, useNavigate } from "react-router-dom";
-
+import 'react-phone-number-input/style.css'
+import PhoneInput,{ formatPhoneNumber, formatPhoneNumberIntl, isPossiblePhoneNumber, isValidPhoneNumber} from 'react-phone-number-input'
 import { useState, useEffect } from 'react';
 
 import {
@@ -49,14 +50,14 @@ const Reservation = () => {
   //   startDate: ""
   // });
 
-  const username = localStorage.getItem('name');
-  const useremail = localStorage.getItem('email');
 
-  const [user, setUser] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
+  const [user, setUser] = useState(localStorage.getItem('name'));
+  const [email, setEmail] = useState( localStorage.getItem('email'));
+  const [mobile, setMobile] = useState();
   const [selects, setSelects] = useState("");
   const [startDate ,setStartDate]=useState("");
+  const [time, setTime] = useState("");
+  const [isValidMobile, setValidMobile] = useState(true);
 
   const [userErr, setUserErr] = useState(false);
   const [mobileErr, setMobileErr] = useState(false);
@@ -72,6 +73,9 @@ const Reservation = () => {
     console.log(startDate);
 
     e.preventDefault();
+    // localStorage.setItem("mobile", mobile);
+    // localStorage.setItem("noOfPeople", selects);
+    // localStorage.setItem("date", startDate);
 
     const reservationDetails = {
       name:user,
@@ -93,10 +97,13 @@ const Reservation = () => {
       url: 'http://localhost:3500/api/reservations/add',
       data: reservationDetails
   })
-  .then((res) => submitForm());
+  .then((res) => {
+    console.log(res.data);
+    if(res.data != null){
+      navigate(`/confirmReservation/${res.data._id}`);
+    }
+  });
 
-
-  
   }
 
 
@@ -129,6 +136,13 @@ function emailHandler(e) {
     setEmailErr(false);
   }
   setEmail(item);
+}
+
+
+function timeHandler(e) {
+  let item = e.target.value;
+
+  setTime(item);
 }
 return (
 
@@ -172,8 +186,8 @@ return (
       </div>
       <ReservationCard />
     </div>
-    <div className="footer">
-      <div className="copyright">
+    <div className="footers">
+      <div className="copyrights">
         <h5>Copyright @all rights reserved.</h5>
       </div>
     </div>
@@ -212,48 +226,53 @@ return (
               </option>
             </select>
           </div>
+          
+          <div class="inputWithIcon">
+            <input type="time" className="text_field" placeholder="11:30" value={time} onChange={timeHandler} />
+            {emailErr ? <span>Email is Not Valid</span> : ""}
+   
+          </div>
 
           <div className="inputWithIcon">
-            <input type="text" className="text_field" placeholder={username} value={user} onChange={userHandler}/>
+            <input type="text" className="text_field" placeholder="" value={user} onChange={userHandler}/>
             {userErr ? <span>User Not Valid</span> : ""}
-            <FontAwesomeIcon
-              className="icon"
-              size="1x"
-              icon={faMessage}
-            ></FontAwesomeIcon>
+      
           </div>
 
           <div class="inputWithIcon">
-            <input type="text" className="text_field" placeholder={useremail} value={email} onChange={emailHandler} />
+            <input type="text" className="textfield" placeholder="" value={email} onChange={emailHandler} />
             {emailErr ? <span>Email is Not Valid</span> : ""}
-            <FontAwesomeIcon
-              className="icon"
-              size="1x"
-              icon={faUser}
-            ></FontAwesomeIcon>
+   
           </div>
 
-          <div className="inputWithIcon">
-            <input
-              onChange={mobileHandler}
-              type="text"
-              className="text_field"
-              placeholder="+91 Mobile Phone"
+            <PhoneInput
+            className="phoneData"
+              defaultCountry="IN"
               value={mobile}
+              onChange={mobile=>getMobile(mobile)}
+        
+              placeholder="+91 Mobile Phone"
             />
+              {isValidMobile ? "": <span>Mobile number is not valid</span>}
             {mobileErr ? <span>Mobile No is Not Valid</span> : ""}
-            <FontAwesomeIcon
-              className="icon"
-              size="1x"
-              icon={faPhone}
-            ></FontAwesomeIcon>
-          </div>
+      
+          
           <button onClick={review_Reservation} type="submit" className="Button1">Review Reservation</button>
         </div>
       </div>
     </form>
   </div>
+
 );
+
+function getMobile(mobile){
+    setMobile(mobile);
+    if(mobile != null)
+    {
+      const data = isValidPhoneNumber(mobile);
+      setValidMobile(data);
+    }
+}
 }
 
 export default Reservation;

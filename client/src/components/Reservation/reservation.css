@@ -118,7 +118,7 @@
     background-color: white;
     /* margin-left: 700px; */
     margin-left: 800px;
-    margin-top: -1625px;
+    margin-top: -1690px;
     position: sticky;
   }
   
@@ -150,6 +150,8 @@
     margin-left: 40px;
     font-family: "Nunito";
   }
+
+
   .DropDown {
     margin-left: 40px;
   }
@@ -167,9 +169,9 @@
     color: gray;
     border: 2px solid #aaa;
   }
-  .icon {
+  .icons {
     color: gray;
-    margin-left: -450px;
+    margin-left: -600px;
   }
   .timeDiscount {
     display: flex;
@@ -197,9 +199,12 @@
   }
   
   .inputWithIcon .text_field {
-    padding-left: 40px;
+    padding-left: 30px;
   }
-  
+  input[type='time']{
+    margin-top: -1px;
+    margin-left: 40px;
+  }
   input[type="date"]::-webkit-calendar-picker-indicator {
     color: #aaa;
     opacity: 1;
@@ -247,15 +252,15 @@
     /* top:235%; */
   /* } */
   
-  .footer {
+  .footers {
     height: 7vh;
     background-color: #ff7a42;
     color: #000;
-    margin-top: -80px;
+    margin-top: -50px;
     font-family: "Nunito";
   }
   
-  .copyright {
+  .copyrights {
     font-size: 20px;
     margin-left: 600px;
     padding: 18px;
@@ -272,4 +277,17 @@
     border-radius: 4px;
     width: 80%;
     margin-left: 40px;
+  }
+
+  .phoneData{
+    width: 87%;
+  }
+
+  .PhoneInputInput {
+    /* The phone number input stretches to fill all empty space */
+    flex: 1;
+    /* The phone number input should shrink
+       to make room for the extension input */
+    margin-left: 1px;
+
   }

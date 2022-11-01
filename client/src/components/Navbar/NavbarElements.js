@@ -3,6 +3,8 @@ import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../Images/logo.png";
 
+
+
 export const NavLogo = styled.nav`
   background-image: url(${logo});
   margin-top: -15px;

@@ -10,7 +10,6 @@ import {
   NavLogo
 } from './NavbarElements';
 import logo from '../../Images/logo.png';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   
@@ -69,7 +68,7 @@ const Navbar = () => {
                 </NavBtn>
             </>
          : <>
-         <p>{username}</p>
+         <p className='uname'>{username}</p>
          <NavBtn>
                   <NavBtnLink onClick={logOut} >Logout</NavBtnLink>
                 </NavBtn>

@@ -17,7 +17,7 @@ import Reserve from "./components/Reservation/confirm";
         <Route path="/reservation/:id" element={<Reservation/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
-        <Route path="/confirmReservation" element={<Reserve/>}></Route>
+        <Route path="/confirmReservation/:id" element={<Reserve/>}></Route>
 
         {/* <Route path="/joindhaba" element={<joinDhaba/>}></Route> */}
 

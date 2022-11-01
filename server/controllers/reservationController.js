@@ -31,9 +31,40 @@ const reservationController = {
             newCode
         });
     
-        newReservation.save()
-            .then(() => res.json('Reservation added!'))
-            .catch(err => res.status(400).json('Error: ' + err));
+        const checkInsert = await newReservation.save()
+            if(checkInsert != null){
+                res.json(checkInsert)
+            }else{
+                res.status(400).json('Something went wrong!');
+            }
+            // .then(() => res.json('Reservation added!'))
+            // .catch(err => res.status(400).json('Error: ' + err));
+
+
+            
+    },
+
+    async index(req, res, next) {
+        let documents;
+        try {
+            documents = await reservation.find().select('-updatedAt -__v').sort({ _id: -1 });
+        } catch (error) {
+            return next(CustomErrorHandler.serverError());
+        }
+        res.json(documents);
+    },
+
+    
+    async show(req, res, next) {
+        let document;
+        document = await reservation.findOne({ _id: req.params.id }).select('-updatedAt -__v');
+        try {
+
+        } catch (error) {
+            return next(CustomErrorHandler.serverError());
+        }
+        return res.json(document);
     }
+
 }
 export default reservationController;

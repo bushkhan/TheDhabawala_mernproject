@@ -31,5 +31,8 @@ router.delete('/dhabas/:id',[auth, admin], dhabaController.destroy);
 
 router.post('/reservations/add', reservationController.add);
 
+router.get('/reservations', reservationController.index);
+
+router.get('/reservations/:id', reservationController.show);
 
 export default router;
