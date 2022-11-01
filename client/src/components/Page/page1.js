@@ -19,11 +19,24 @@ import Button2 from "../Button/button2";
 import Button3 from "../Button/button3";
 import Button4 from "../Button/button4";
 import Hero from "../Hero/heroindex";
+import {useEffect} from 'react';
+import { useNavigate } from "react-router-dom";
 
 
-const page1 = () => {
+const Page1 = () => {
+
+  // let navigate = useNavigate();
 
 
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   const role = localStorage.getItem('role');
+
+  //   if(token != null && role != 'customer'){
+  //     navigate("/login"); 
+
+  //   }
+  // }, []);
 
   return (
     <>
@@ -173,4 +186,4 @@ const page1 = () => {
   );
 };
 
-export default page1;
+export default Page1;

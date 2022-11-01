@@ -1,4 +1,5 @@
 import React from 'react';
+import {useEffect, useState } from 'react';
 import {
   Nav,
   NavLink,
@@ -12,6 +13,28 @@ import logo from '../../Images/logo.png';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  
+
+  const [loginStatus, setLoginStatus] = useState(false);
+  const [username, setUsername] = useState(false);
+
+  useEffect(() => {
+    
+    const token = localStorage.getItem('token');
+    const role = localStorage.getItem('role');
+    const name = localStorage.getItem('name');
+
+
+    if(token != null && role == 'customer'){
+      setLoginStatus(true);
+      setUsername(name);
+    }
+  }, []);
+
+  function logOut(){
+    localStorage.clear();
+    window.location.reload();
+  }
   return (
     <>
       <Nav>
@@ -36,12 +59,22 @@ const Navbar = () => {
             Contact Us
           </NavLink>
         </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/login'>Log In</NavBtnLink>
-        </NavBtn>
-        <NavBtn>
-          <NavBtnLink to='/register'>Register</NavBtnLink>
-        </NavBtn>
+        {!loginStatus? 
+            <>
+                  <NavBtn>
+                  <NavBtnLink to='/login'>Log In</NavBtnLink>
+                </NavBtn>
+                <NavBtn>
+                  <NavBtnLink to='/register'>Register</NavBtnLink>
+                </NavBtn>
+            </>
+         : <>
+         <p>{username}</p>
+         <NavBtn>
+                  <NavBtnLink onClick={logOut} >Logout</NavBtnLink>
+                </NavBtn>
+         </>}
+
       </Nav>
     </>
   );

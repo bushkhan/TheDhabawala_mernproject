@@ -4,7 +4,12 @@ import GoogleLogin from 'react-google-login';
 import { useState } from "react"
 import './styles.css';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import SweetAlert from 'sweetalert-react';
+
 export default function Login(){
+  let navigate = useNavigate();
+
 
   const [loginData, setLoginData] = useState(
     localStorage.getItem('loginData')
@@ -66,19 +71,56 @@ export default function Login(){
     axios({
       method: 'POST',
       url: 'http://localhost:3500/api/login',
-      data: loginDetails
+      data: loginDetails,
+      
   })
   .then((res) => {
 
+    console.log(res.data.access_token);
     setLoginStatus("login success");
-    console.log(res);
+    localStorage.setItem("token", res.data.access_token);
+    localStorage.setItem("name", res.data.name);
+    localStorage.setItem("email", res.data.email);
+    localStorage.setItem("_id", res.data.id);
+    localStorage.setItem("role", res.data.role);
 
+
+    if(res.data.access_token != null ){
+      if(res.data.role === 'customer'){
+        navigate("/"); 
+
+      }
+      // getUserData();
+    }else if(res.data.role === 'admin'){
+
+    }else{
+
+    }
+
+  
   }).catch(err => {
 
+    console.log(err);
     setLoginStatus(err.response.data.message);
     console.log(err.response.data.message);
   });
 
+
+  // function getUserData(){
+
+  //   const token = localStorage.getItem('token');
+
+  //   axios({
+  //     method: 'GET',
+  //     url: 'http://localhost:3500/api/me',
+  //     headers: {
+  //       'Authorization' : 'Bearer ' + token
+  //     }
+  // })
+  // .then((res) => {
+  //   console.log(res.data);
+  // });
+  // }
 
   }
 

@@ -3,7 +3,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Authentication/styles.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import SweetAlert from 'sweetalert-react';
 export default function Register() {
+  let navigate = useNavigate();
+
   function handleCallbackResponse(response) {
     console.log("Encoded JWT ID token:" + response.credential);
   }
@@ -28,7 +32,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [Confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -71,8 +75,10 @@ export default function Register() {
       data: registerDetails
   })
   .then((res) => {
-    alert("register done");
-    console.log(res);
+    setIsOpen(true);
+    alert("register successful!")
+    navigate("/login"); 
+
   });
   };
 

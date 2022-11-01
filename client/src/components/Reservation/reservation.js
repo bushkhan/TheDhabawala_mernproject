@@ -39,6 +39,8 @@ const Reservation = () => {
   const { name, dhabaImage, menuImage } = myData;
 
 
+
+
   // const [addStudent, setAddStudent] = useState({
   //   user: "",
   //   email: "",
@@ -47,6 +49,8 @@ const Reservation = () => {
   //   startDate: ""
   // });
 
+  const username = localStorage.getItem('name');
+  const useremail = localStorage.getItem('email');
 
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
@@ -74,9 +78,11 @@ const Reservation = () => {
       email:email,
       mobile:mobile,
       date:startDate,
-      noOfPeople:selects
+      noOfPeople:selects,
+      dhabaId:id
     }
     console.log(reservationDetails);
+    console.log(id);
 
     function submitForm(e){ 
       navigate('/confirmReservation');
@@ -208,7 +214,7 @@ return (
           </div>
 
           <div className="inputWithIcon">
-            <input type="text" className="text_field" placeholder="Your name" value={user} onChange={userHandler} />
+            <input type="text" className="text_field" placeholder={username} value={user} onChange={userHandler}/>
             {userErr ? <span>User Not Valid</span> : ""}
             <FontAwesomeIcon
               className="icon"
@@ -218,7 +224,7 @@ return (
           </div>
 
           <div class="inputWithIcon">
-            <input type="text" className="text_field" placeholder="Email" value={email} onChange={emailHandler} />
+            <input type="text" className="text_field" placeholder={useremail} value={email} onChange={emailHandler} />
             {emailErr ? <span>Email is Not Valid</span> : ""}
             <FontAwesomeIcon
               className="icon"
