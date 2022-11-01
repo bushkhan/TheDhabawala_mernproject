@@ -27,7 +27,15 @@ const reservationSchema = new Schema({
         type: Number,
         required: true,
 
-    }, 
+    },
+    dhabaId: {
+        type:String,
+        required:true
+    } ,
+    newCode: {
+        type:String,
+        required:true
+    } ,
 }, {
     timestamps: true
 });
