@@ -118,7 +118,7 @@
   }
 
   .reserve-me {
-    width: 480px;
+    width: 440px;
     height: 40px;
     justify-content: center;
     justify-items: baseline;
@@ -128,7 +128,7 @@
     background-color: #ff5200;
     color: #fee2b3;
     border: 1px solid #ff5200;
-   margin-left: -21px;
+   margin-left: -20px;
     margin-top:60px;
   }
 

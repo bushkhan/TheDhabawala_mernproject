@@ -1,14 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router,Routes,Route,Link } from "react-router-dom";
 import './App.css';
-import Hero from "./components/Hero/heroindex";
 import Login from "./components/Authentication/Login";
 import Page1 from "./components/Page/page1";
 import Register from "./components/Authentication/Register";
-import joinDhaba from "./components/joindhaba";
 import Reservation from "./components/Reservation/reservation"
 import Reserve from "./components/Reservation/confirm";
 import CancleReservaion from "./components/Reservation/cancel_reservation";
+import DhabaHome from "./dhabaOwner/dhabaHome";
 
  const App = () => {
   return (
@@ -21,17 +20,8 @@ import CancleReservaion from "./components/Reservation/cancel_reservation";
         <Route path="/confirmReservation/:id" element={<Reserve/>}></Route>
         <Route path="/cancelReservation" element={<CancleReservaion/>}></Route>
 
-        {/* <Route path="/joindhaba" element={<joinDhaba/>}></Route> */}
-
+      <Route path="/dhabaPanel" element={<DhabaHome/>}></Route>
       </Routes>
-
-      
-      {/* <Hero />
-      <Page1/>  */}
-      {/* <Reservation/> */}
-      {/* <Location/> */}
-      {/* <Cancle_reservation/> */}
-      {/* <Button1/> */}
       
     </Router>
     

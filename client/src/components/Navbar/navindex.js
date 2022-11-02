@@ -7,7 +7,8 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-  NavLogo
+  NavLogo,
+  NavP
 } from './NavbarElements';
 import logo from '../../Images/logo.png';
 
@@ -68,7 +69,9 @@ const Navbar = () => {
                 </NavBtn>
             </>
          : <>
-         <p className='uname'>{username}</p>
+         <NavP>
+<p>Hello,{username}</p>
+      </NavP>
          <NavBtn>
                   <NavBtnLink onClick={logOut} >Logout</NavBtnLink>
                 </NavBtn>

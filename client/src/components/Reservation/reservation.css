@@ -1,293 +1,293 @@
 * {
-    font-family: "Nunito";
-  }
-  body {
-    background-color: #fee2b3;
-    height: 250vh;
-  }
+  font-family: "Nunito";
+}
+body {
+  background-color: #fee2b3;
+  height: 250vh;
+}
+
+/* Dhaba Name Start */
+
+.text_field {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.reservation {
+  display: flex;
+}
+
+.reservationlogo {
+  margin-left: 60px;
+  margin-top: 40px;
+}
+
+.reservation h2 {
+  margin-top: 100px;
+  margin-left: 20px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.res_rating {
+  display: flex;
+}
+
+.rating1{
+  margin-left: 85px;
+  margin-top: 10px;
+}
+
+.res_no {
+  margin-top: 15px;
+  margin-left: 25px;
+  font-size: 20px;
+}
+
+.line1{
+  position: absolute;
+  margin-top: 7px;
+  border-right: 2px solid black;
+  height: 30px;
+  margin-left: 260px;
+}
+
+.rating_2{
+  margin-left:15px;
+  margin-top: 10px;
+}
+
+.line2 {
+  position: absolute;
+  margin-top: 7px;
+  border-right: 2px solid black;
+  height: 30px;
+  margin-left: 380px;
+}
+
+.cuisine_name1{
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.res_loc {
+  display: flex;
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+.no_of_reservation{
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.reservation_loc {
+  margin-top: 30px;
+  margin-left: 90px;
+}
+
+.add_fav {
+  margin-top: 30px;
+  margin-left: 150px;
+}
+
+.res_loc::after {
+  content: "";
+  height: 1.5px;
+  width: 41%;
+  background-color: black;
+  position: absolute;
+  left: 3.5%;
+  top: 36%;
+  margin-left: 22px;
+}
+
+/* Dhaba Name Ends */
+
+.dhaba_food_photo{
+  margin-top:30px;
+  margin-left: 72px;
   
-  /* Dhaba Name Start */
-  
-  .text_field {
-    margin-top: 20px;
-    margin-left: 25px;
-  }
-  
-  .reservation {
-    display: flex;
-  }
-  
-  .reservationlogo {
-    margin-left: 60px;
-    margin-top: 40px;
-  }
-  
-  .reservation h2 {
-    margin-top: 100px;
-    margin-left: 20px;
-    font-size: 25px;
-    font-weight: 400;
-  }
-  
-  .res_rating {
-    display: flex;
-  }
-  
-  .rating1{
-    margin-left: 85px;
-    margin-top: 10px;
-  }
-  
-  .res_no {
-    margin-top: 15px;
-    margin-left: 25px;
-    font-size: 20px;
-  }
-  
-  .line1{
-    position: absolute;
-    margin-top: 7px;
-    border-right: 2px solid black;
-    height: 30px;
-    margin-left: 260px;
-  }
-  
-  .rating_2{
-    margin-left:15px;
-    margin-top: 10px;
-  }
-  
-  .line2 {
-    position: absolute;
-    margin-top: 7px;
-    border-right: 2px solid black;
-    height: 30px;
-    margin-left: 380px;
-  }
-  
-  .cuisine_name1{
-    margin-top: 10px;
-    margin-left: 30px;
-    font-size: 20px;
-    font-weight: 400;
-  }
-  
-  .res_loc {
-    display: flex;
-    font-weight: lighter;
-    font-size: 25px;
-  }
-  
-  .no_of_reservation{
-    margin-left: 80px;
-    margin-top: 30px;
-  }
-  
-  .reservation_loc {
-    margin-top: 30px;
-    margin-left: 90px;
-  }
-  
-  .add_fav {
-    margin-top: 30px;
-    margin-left: 150px;
-  }
-  
-  .res_loc::after {
-    content: "";
-    height: 1.5px;
-    width: 41%;
-    background-color: black;
-    position: absolute;
-    left: 3.5%;
-    top: 36%;
-    margin-left: 22px;
-  }
-  
-  /* Dhaba Name Ends */
-  
-  .dhaba_food_photo{
-    margin-top:30px;
-    margin-left: 72px;
-    
-  }
-  
-  .form {
-    height: 550px;
-    width: 600px;
-    background-color: white;
-    /* margin-left: 700px; */
-    margin-left: 800px;
-    margin-top: -1690px;
-    position: sticky;
-  }
-  
-  .reservationdetail {
-    font-size: 18px;
-    margin-left: 40px;
-    padding-top: 30px;
-  }
-  
-  .reservationdetail::after {
-    content: "";
-    height: 1.5px;
-    width: 26%;
-    background-color: #ff5200;
-    position: absolute;
-    left: 6.6%;
-    top: 9%;
-  }
-  
-  input[type="text"] {
-    width: 80%;
-    border: 2px solid #aaa;
-    border-radius: 4px;
-    margin: 8px 0px;
-    outline: none;
-    padding: 12px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    margin-left: 40px;
-    font-family: "Nunito";
-  }
+}
+
+.form {
+  height: 550px;
+  width: 600px;
+  background-color: white;
+  /* margin-left: 700px; */
+  margin-left: 800px;
+  margin-top: -1690px;
+  position: sticky;
+}
+
+.reservationdetail {
+  font-size: 18px;
+  margin-left: 40px;
+  padding-top: 30px;
+}
+
+.reservationdetail::after {
+  content: "";
+  height: 1.5px;
+  width: 26%;
+  background-color: #ff5200;
+  position: absolute;
+  left: 6.6%;
+  top: 9%;
+}
+
+input[type="text"] {
+  width: 80%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0px;
+  outline: none;
+  padding: 12px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  margin-left: 40px;
+  font-family: "Nunito";
+}
 
 
-  .DropDown {
-    margin-left: 40px;
-  }
-  
-  .Dropdown {
-    display: f;
-    transition: 0.3s;
-    border: 2px solid #aaa;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 12px;
-    margin: 8px 0;
-    outline: none;
-    width: 86%;
-    color: gray;
-    border: 2px solid #aaa;
-  }
-  .icons {
-    color: gray;
-    margin-left: -600px;
-  }
-  .timeDiscount {
-    display: flex;
-  }
-  .time_Discount {
-    margin-top: 10px;
-    color: gray;
-    outline: none;
-    margin-left: 20px;
-    font-family: "Nunito";
-    font-size: 16px;
-  }
-  .icon_clock {
-    color: #aaa;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .time_discount {
-    background-color: white;
-    width: 80%;
-    border-radius: 4px;
-    margin-left: 40px;
-    border: 2px solid #aaa;
-  }
-  
-  .inputWithIcon .text_field {
-    padding-left: 30px;
-  }
-  input[type='time']{
-    margin-top: -1px;
-    margin-left: 40px;
-  }
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    color: #aaa;
-    opacity: 1;
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-width: thin;
-  }
-  input,
-  .date {
-    color: #aaa;
-    border: 2px solid #aaa;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 10px;
-    margin-left: 39px;
-    padding: 12px;
-    width: 80%;
-    justify-content: space-between;
-  }
-  
-  .trending_reservation {
-    /* margin-top: 450px; */
-    margin-top: 220px;
-    margin-bottom: 25px;
-    margin-left: 55px;
-  }
-  
-  .trending_dhaba_reservation {
-    font-size: 12px;
-    font-family: "Nunito";
-    margin-bottom: 20px;
-    /* margin-top: 100px; */
-  }
-  
-  /* .trending_dhaba_reservation::after {
-    content: "";
-    height: 3px;
-    width: 18%;
-    background-color: #ff5200;
-    position: absolute;
-    left: 3.5%;
-    bottom: 0%;
-    top: 200%;
-    /* top:235%; */
-  /* } */
-  
-  .footers {
-    height: 7vh;
-    background-color: #ff7a42;
-    color: #000;
-    margin-top: -50px;
-    font-family: "Nunito";
-  }
-  
-  .copyrights {
-    font-size: 20px;
-    margin-left: 600px;
-    padding: 18px;
-  }
-  
-  .Button1 {
-    color: white;
-    font-family: "Nunito";
-    font-size: 17px;
-    margin-top: 48px;
-    padding: 12px;
-    background-color: #ff5200;
-    border: none;
-    border-radius: 4px;
-    width: 80%;
-    margin-left: 40px;
-  }
+.DropDown {
+  margin-left: 40px;
+}
 
-  .phoneData{
-    width: 87%;
-  }
+.Dropdown {
+  display: f;
+  transition: 0.3s;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px;
+  margin: 8px 0;
+  outline: none;
+  width: 86%;
+  color: gray;
+  border: 2px solid #aaa;
+}
+.icons {
+  color: gray;
+  margin-left: -600px;
+}
+.timeDiscount {
+  display: flex;
+}
+.time_Discount {
+  margin-top: 10px;
+  color: gray;
+  outline: none;
+  margin-left: 20px;
+  font-family: "Nunito";
+  font-size: 16px;
+}
+.icon_clock {
+  color: #aaa;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.time_discount {
+  background-color: white;
+  width: 80%;
+  border-radius: 4px;
+  margin-left: 40px;
+  border: 2px solid #aaa;
+}
 
-  .PhoneInputInput {
-    /* The phone number input stretches to fill all empty space */
-    flex: 1;
-    /* The phone number input should shrink
-       to make room for the extension input */
-    margin-left: 1px;
+.inputWithIcon .text_field {
+  padding-left: 30px;
+}
+input[type='time']{
+  margin-top: -1px;
+  margin-left: 40px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #aaa;
+  opacity: 1;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+}
+input,
+.date {
+  color: #aaa;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-left: 39px;
+  padding: 12px;
+  width: 80%;
+  justify-content: space-between;
+}
 
-  }
+.trending_reservation {
+  /* margin-top: 450px; */
+  margin-top: 220px;
+  margin-bottom: 25px;
+  margin-left: 55px;
+}
+
+.trending_dhaba_reservation {
+  font-size: 12px;
+  font-family: "Nunito";
+  margin-bottom: 20px;
+  /* margin-top: 100px; */
+}
+
+/* .trending_dhaba_reservation::after {
+  content: "";
+  height: 3px;
+  width: 18%;
+  background-color: #ff5200;
+  position: absolute;
+  left: 3.5%;
+  bottom: 0%;
+  top: 200%;
+  /* top:235%; */
+/* } */
+
+.footers {
+  height: 7vh;
+  background-color: #ff7a42;
+  color: #000;
+  margin-top: -50px;
+  font-family: "Nunito";
+}
+
+.copyrights {
+  font-size: 20px;
+  margin-left: 600px;
+  padding: 18px;
+}
+
+.Button1 {
+  color: white;
+  font-family: "Nunito";
+  font-size: 17px;
+  margin-top: 48px;
+  padding: 12px;
+  background-color: #ff5200;
+  border: none;
+  border-radius: 4px;
+  width: 80%;
+  margin-left: 40px;
+}
+
+.phoneData{
+  width: 87%;
+}
+
+.PhoneInputInput {
+  /* The phone number input stretches to fill all empty space */
+  flex: 1;
+  /* The phone number input should shrink
+     to make room for the extension input */
+  margin-left: 1px;
+
+}

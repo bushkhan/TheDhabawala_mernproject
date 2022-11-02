@@ -1,0 +1,43 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+    margin-top: 200px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 150px;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 8px;
+    font-size: 20px;
+  }
+  
+  th {
+    background-color: rgb(246, 185, 148);
+  }
+  
+  td {
+    background-color: rgb(252, 238, 219);
+  }
+  
+ 
+  .table__form td:last-child {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .table__form {
+    font-size: 1.3rem;
+  font-family: 'Nunito';
+  display: flex;
+  gap: 5px;
+  }
+

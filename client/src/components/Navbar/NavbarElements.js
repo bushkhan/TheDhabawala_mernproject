@@ -4,7 +4,14 @@ import styled from "styled-components";
 import logo from "../../Images/logo.png";
 
 
+export const NavP = styled.p`
+background: transparent;
+color: white;
+margin-top: 40px;
+margin-left: 280px;
+font-size: 20px
 
+`;
 export const NavLogo = styled.nav`
   background-image: url(${logo});
   margin-top: -15px;

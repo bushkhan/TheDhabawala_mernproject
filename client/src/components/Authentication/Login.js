@@ -89,15 +89,11 @@ export default function Login(){
       if(res.data.role === 'customer'){
         navigate("/"); 
 
-      }
-      // getUserData();
-    }else if(res.data.role === 'admin'){
-
-    }else{
-
-    }
-
+      }else {
+        navigate("/dhabaPanel"); 
   
+      }
+    }
   }).catch(err => {
 
     console.log(err);
