@@ -132,6 +132,22 @@
     margin-top:60px;
   }
 
+  
+  .not-reserve-me {
+    width: 350px;
+    height: 40px;
+    justify-content: center;
+    justify-items: baseline;
+    border-radius: 2px;
+    font-family: 'Nunito';
+    font-size: large;
+    background-color: #ff5200;
+    color: #fee2b3;
+    border: 1px solid #ff5200;
+   margin-left: 39px;
+    margin-top:60px;
+  }
+
   .copyrights{
       margin-top: 20px;
       margin-left: 30px
@@ -315,4 +331,19 @@
     color: #000;
     margin-top: 10px;
     margin-left: 20px;
+  }
+
+  .reason{
+   display: inline;
+  margin-top: 10px;
+  
+  }
+  input{
+    width: 15%;
+    margin: 0px 0px 0px 0px;
+
+  }
+
+  .main-div{
+    margin-top: 20px;
   }

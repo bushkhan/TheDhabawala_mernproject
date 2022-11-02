@@ -8,6 +8,7 @@ import Register from "./components/Authentication/Register";
 import joinDhaba from "./components/joindhaba";
 import Reservation from "./components/Reservation/reservation"
 import Reserve from "./components/Reservation/confirm";
+import CancleReservaion from "./components/Reservation/cancel_reservation";
 
  const App = () => {
   return (
@@ -18,6 +19,7 @@ import Reserve from "./components/Reservation/confirm";
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/confirmReservation/:id" element={<Reserve/>}></Route>
+        <Route path="/cancelReservation" element={<CancleReservaion/>}></Route>
 
         {/* <Route path="/joindhaba" element={<joinDhaba/>}></Route> */}
 

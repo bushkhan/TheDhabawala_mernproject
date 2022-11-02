@@ -100,6 +100,7 @@ const Reservation = () => {
   .then((res) => {
     console.log(res.data);
     if(res.data != null){
+      alert("Reservation Successful!")
       navigate(`/confirmReservation/${res.data._id}`);
     }
   });
@@ -226,12 +227,7 @@ return (
               </option>
             </select>
           </div>
-          
-          <div class="inputWithIcon">
-            <input type="time" className="text_field" placeholder="11:30" value={time} onChange={timeHandler} />
-            {emailErr ? <span>Email is Not Valid</span> : ""}
-   
-          </div>
+
 
           <div className="inputWithIcon">
             <input type="text" className="text_field" placeholder="" value={user} onChange={userHandler}/>

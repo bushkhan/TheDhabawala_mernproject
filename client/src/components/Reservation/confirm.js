@@ -186,9 +186,13 @@ const { id } = useParams();
                 </div>
               </div>
             </form>
+            <Link to="/cancelReservation">
             <div className="reserve-button">
+            
               <button className="reserve-me">Cancel Reservation</button>
+             
             </div>
+            </Link>
           </div>
         </div>
         <div className="footer">
